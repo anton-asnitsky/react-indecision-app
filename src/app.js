@@ -7,7 +7,7 @@ const obj = {
 
 const getName = obj.getNames.bind(obj);
 
-console.log(getName());
+console.log(getName() );
 class IndecisionApp extends React.Component{
     render(){
         const title = 'Indecision';
