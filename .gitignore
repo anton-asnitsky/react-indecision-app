@@ -2,7 +2,7 @@
 
 # compiled output
 public/dist/*
-public/scripts/app.js
+public/scripts/*
 /dist
 /dst
 /tmp
