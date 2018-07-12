@@ -1,23 +1,28 @@
-const obj = {
-    name: 'Vikram',
-    getNames(){
-        return this.name;
-    }
-};
-
-const getName = obj.getNames.bind(obj);
-
-console.log(getName() );
 class IndecisionApp extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            options: []
+        };
+    };
+    handleDeleteOptions(){
+        this.setState(() => {
+            return {
+                option: []
+            };
+        });
+    };
     render(){
         const title = 'Indecision';
         const subtitle = 'Put your life in the hands of a computer';
-        const options = ['Thing one', 'Thing two', 'Thing four'];
         return (
             <div>
                 <Header title={title} subtitle={subtitle} />
-                <Action />
-                <Options options={options} />
+                <Action hasOptions={this.state.options.length > 0} />
+                <Options 
+                options={this.state.options} 
+                handleDeleteOptions={this.handleDeleteOptions} />
                 <AddOption />
             </div>
         );
@@ -42,7 +47,9 @@ class Action extends React.Component{
     render(){
         return (
             <div>
-                <button onClick={this.handlePick}>What should I do?</button>
+                <button 
+                disabled={!this.props.hasOptions} 
+                onClick={this.handlePick}>What should I do?</button>
             </div>
         );
     };
