@@ -19,6 +19,10 @@ class IndecisionApp extends React.Component{
     componentDidUpdate(){
         console.log('IndecisionApp did update');
     };
+    componentWillUnmount(){
+
+    };
+    
     handleDeleteOptions(){
         this.setState(() => ({options : []}));
     };
