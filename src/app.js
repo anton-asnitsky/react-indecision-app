@@ -1,12 +1,5 @@
-import subtract, { square, add } from './utils.js';
-import isSenior, { isAdult, canDrink } from './person.js';
+import React            from 'react';
+import ReactDOM         from 'react-dom';
+import IndecisionApp    from './components/IndecisionApp';
 
-
-console.log('app.js is running now');
-console.log(square(4));
-console.log(add(2,3));
-console.log(subtract(2,3));
-
-console.log(isSenior(42));
-console.log(isAdult(42));
-console.log(canDrink(20));
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
